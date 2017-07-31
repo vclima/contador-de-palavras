@@ -10,13 +10,20 @@
 int main() {
 
   char c;
-
+  int palavras;
   c = 1;
-
-  while (c != '\n') {
-    scanf("%c", &c);
+  palavras=0;
+  scanf("%c", &c);
+  if(c!='\n'){
+    palavras++;
+    while (c != '\n') {
+      scanf("%c", &c);
+      if(c==' '){
+        palavras++;
+      }
+    }
   }
 
-  printf("2\n");
+  printf("%d\n",palavras);
   return 0;
 }
