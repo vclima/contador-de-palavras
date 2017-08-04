@@ -11,7 +11,7 @@
 
 int main() {
 
-  char c,*teste,ant;
+  char c,*teste,ant,separador;
   char separadores[9];
   int palavras;
   short estado;
@@ -34,12 +34,13 @@ int main() {
       palavras++;
     }
     while(estado==1){
+      separador=c;
       scanf("%c",&c);
       teste=strchr(separadores,c);
       if(c=='\n'){
         palavras--;
       }
-      if(teste==NULL&&isdigit(c)&&isdigit(ant)){
+      if(teste==NULL&&isdigit(c)&&isdigit(ant)&&(separador=='.'||separador==',')){
         palavras--;
       }
       if(teste==NULL){
